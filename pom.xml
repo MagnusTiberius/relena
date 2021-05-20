@@ -37,6 +37,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--  
+		<dependency>
+		    <groupId>org.antlr</groupId>
+		    <artifactId>antlr4-runtime</artifactId>
+		    <version>4.7.1</version>
+		</dependency>
+		-->		
+		<!-- https://mvnrepository.com/artifact/org.antlr/antlr4-runtime -->
+		<dependency>
+		    <groupId>org.antlr</groupId>
+		    <artifactId>antlr4-runtime</artifactId>
+		    <version>4.9.2</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -45,6 +59,22 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+			    <groupId>org.antlr</groupId>
+			    <artifactId>antlr4-maven-plugin</artifactId>
+			    <version>4.7.1</version>
+				<configuration>
+        			<libDirectory>${basedir}/src/main/antlr4/</libDirectory>
+		            <outputDirectory>${basedir}</outputDirectory>
+			    </configuration>			    
+			    <executions>
+			        <execution>
+			            <goals>
+			                <goal>antlr4</goal>
+			            </goals>
+			        </execution>
+			    </executions>
+			</plugin>			
 		</plugins>
 	</build>
 
